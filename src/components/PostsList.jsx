@@ -7,31 +7,38 @@ import Modal from "./Modal";
 import classes from "./PostsList.module.css";
 
 function PostsList(props) {
-  const [author, setAuthor] = useState("");
-  const [comment, setComment] = useState("");
+  const [posts, setPosts] = useState([]);
 
-  const handleAuthorChange = (event) => {
-    setAuthor(event.target.value);
-  };
-
-  const handleCommentChange = (event) => {
-    setComment(event.target.value);
+  const addPostHandler = (postData) => {
+    setPosts((existingPosts) => [postData, ...existingPosts]);
   };
 
   return (
     <>
       {props.isPosting ? (
         <Modal onClose={props.onStopPosting}>
-          <NewPost
-            onAuthorChange={handleAuthorChange}
-            onCommentChange={handleCommentChange}
-          />
+          <NewPost onCancel={props.onStopPosting} onPosting={addPostHandler} />
         </Modal>
       ) : null}
-      <ul className={classes.posts}>
-        <Post name={author} body={comment} />
-        <Post name="Mandeep" body="I love React.js" />
-      </ul>
+
+      {posts.length > 0 && (
+        <ul className={classes.posts}>
+          {posts.map((post) => (
+            <Post
+              key={post.body}
+              name={post.authorOfPost}
+              body={post.commentOfPost}
+            />
+          ))}
+        </ul>
+      )}
+
+      {posts.length === 0 && (
+        <div className={classes.noPosts}>
+          <h1>There are no posts yet...</h1>
+          <p>Start adding some!</p>
+        </div>
+      )}
     </>
   );
 }
