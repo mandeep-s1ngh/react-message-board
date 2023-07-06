@@ -1,9 +1,7 @@
-/* universal selector that matches any element in the document */
 * {
   box-sizing: border-box;
 }
 
-/* root typically matches the html element */
 :root {
   min-height: 100vh;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
