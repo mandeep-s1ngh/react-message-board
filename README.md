@@ -29,7 +29,7 @@ The posts are handled by an API which can be found [here](https://github.com/man
 
 ## <ins>Local Setup</ins>
 
-1. To clone the repo, open up your terminal and run `https://github.com/mandeep-s1ngh/react-message-board.git` - once you have it cloned, move the folder to your usual directory for projects (if necessary).
+1. To clone the repo, open up your terminal and run `git clone https://github.com/mandeep-s1ngh/react-message-board.git` - once you have it cloned, move the folder to your usual directory for projects (if necessary).
 
 2. You can then open up the folder in your code editor of choice and run `npm install` to all the dependencies.
 
