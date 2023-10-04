@@ -21,6 +21,8 @@ The posts are handled by an API which can be found [here](https://github.com/man
 
 ## <ins>Tech Stack</ins>
 
+- CSS
+- JavaScript
 - React
 - React Router DOM
 - Vite
